@@ -282,7 +282,7 @@ function Nav() {
       borderBottom: scrolled ? `1px solid ${theme.border}` : "1px solid transparent",
       transition: "all 0.5s cubic-bezier(0.16,1,0.3,1)",
     }}>
-      <div style={{ maxWidth: 1280, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", padding: scrolled ? "14px 40px" : "24px 40px", transition: "padding 0.5s" }}>
+      <div className="nav-inner-pad" style={{ maxWidth: 1280, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", padding: scrolled ? "14px 40px" : "24px 40px", transition: "padding 0.5s" }}>
         <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
           style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
           <span style={{ fontFamily: "'Helvetica Neue',Arial,sans-serif", fontSize: "1.6rem", fontWeight: 900, color: theme.gold, letterSpacing: "-0.05em", lineHeight: 1 }}>PG</span>
@@ -345,13 +345,13 @@ function Hero() {
       <div style={{ position: "absolute", top: "10%", right: "15%", width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle, rgba(212,168,83,0.06) 0%, transparent 70%)", filter: "blur(40px)", transform: `translate(${mouse.x * 2}px, ${mouse.y * 2}px)`, transition: "transform 0.3s ease-out" }} />
       <div style={{ position: "absolute", bottom: "20%", left: "10%", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle, rgba(212,168,83,0.03) 0%, transparent 70%)", filter: "blur(60px)" }} />
 
-      <div style={{ maxWidth: 1280, margin: "0 auto", padding: "160px 40px 120px", display: "grid", gridTemplateColumns: "1fr 360px", gap: 80, alignItems: "center", position: "relative", zIndex: 2, width: "100%" }}>
+      <div className="hero-grid" style={{ maxWidth: 1280, margin: "0 auto", padding: "160px 40px 120px", display: "grid", gridTemplateColumns: "1fr 360px", gap: 80, alignItems: "center", position: "relative", zIndex: 2, width: "100%" }}>
         <div>
           <div style={{
             opacity: loaded ? 1 : 0, transform: loaded ? "none" : "translateY(30px)",
             transition: "all 1s cubic-bezier(0.16,1,0.3,1) 0.1s"
           }}>
-            <div style={{ display: "inline-flex", alignItems: "center", gap: 10, marginBottom: 24 }}>
+            <div className="hero-label-row" style={{ display: "inline-flex", alignItems: "center", gap: 10, marginBottom: 24 }}>
               <span style={{ width: 36, height: 2, background: theme.gold }} />
               <span style={{ fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: theme.gold }}>
                 Sales Leader · B2B SaaS
@@ -366,7 +366,7 @@ function Hero() {
           }}>
             Building pipeline<br /><span style={{ color: theme.gold, fontStyle: "italic" }}>from zero.</span>
           </h1>
-          <p style={{
+          <p className="hero-desc" style={{
             fontSize: "1.08rem", color: theme.textMuted, maxWidth: 540, lineHeight: 1.8, marginBottom: 44,
             opacity: loaded ? 1 : 0, transform: loaded ? "none" : "translateY(30px)",
             transition: "all 1s cubic-bezier(0.16,1,0.3,1) 0.4s"
@@ -375,7 +375,7 @@ function Hero() {
           </p>
 
           {/* Stats */}
-          <div style={{
+          <div className="hero-stats-row" style={{
             display: "flex", gap: 48, marginBottom: 48,
             opacity: loaded ? 1 : 0, transform: loaded ? "none" : "translateY(20px)",
             transition: "all 1s cubic-bezier(0.16,1,0.3,1) 0.55s"
@@ -394,7 +394,7 @@ function Hero() {
             ))}
           </div>
 
-          <div style={{
+          <div className="hero-ctas-row" style={{
             display: "flex", gap: 16, flexWrap: "wrap",
             opacity: loaded ? 1 : 0, transform: loaded ? "none" : "translateY(20px)",
             transition: "all 1s cubic-bezier(0.16,1,0.3,1) 0.65s"
@@ -405,7 +405,7 @@ function Hero() {
         </div>
 
         {/* Photo */}
-        <div style={{
+        <div className="hero-photo-wrap" style={{
           position: "relative",
           opacity: loaded ? 1 : 0, transform: loaded ? `translate(${mouse.x}px, ${mouse.y}px)` : "translateY(50px) scale(0.95)",
           transition: loaded ? "transform 0.3s ease-out" : "all 1.2s cubic-bezier(0.16,1,0.3,1) 0.4s",
@@ -435,13 +435,13 @@ function Hero() {
 // ─── About ──────────────────────────────────────────────────
 function About() {
   return (
-    <section id="about" style={{ padding: "120px 40px", background: theme.bgAlt, position: "relative" }}>
+    <section id="about" className="section-pad" style={{ padding: "120px 40px", background: theme.bgAlt, position: "relative" }}>
       <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 1, background: `linear-gradient(90deg, transparent, ${theme.border}, transparent)` }} />
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <Reveal>
           <SectionHeader label="About" title="The operator who builds" subtitle="Not a process follower — a pipeline architect." />
         </Reveal>
-        <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 64, alignItems: "start", marginTop: 64 }}>
+        <div className="about-grid" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 64, alignItems: "start", marginTop: 64 }}>
           <div>
             <Reveal delay={0.1}>
               <p style={{ fontSize: "1.05rem", color: theme.textMuted, lineHeight: 1.85, marginBottom: 24 }}>
@@ -460,7 +460,7 @@ function About() {
               </p>
             </Reveal>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+          <div className="about-cards" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
             {[
               { icon: "🎯", title: "Outbound First", desc: "Cold pipeline, cold prospects, cold start. No inbound crutch." },
               { icon: "📊", title: "Account-Based", desc: "Signal-driven targeting using tech stack data." },
@@ -526,15 +526,15 @@ function SectionHeader({ label, title, subtitle, light = false }) {
 // ─── Experience ─────────────────────────────────────────────
 function Experience() {
   return (
-    <section id="experience" style={{ padding: "120px 40px", background: theme.bg }}>
+    <section id="experience" className="section-pad" style={{ padding: "120px 40px", background: theme.bg }}>
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
         <Reveal><SectionHeader label="Experience" title="Career trajectory" subtitle="Climbing fast, building faster." /></Reveal>
-        <div style={{ marginTop: 64, position: "relative", paddingLeft: 60 }}>
+        <div className="timeline-wrap" style={{ marginTop: 64, position: "relative", paddingLeft: 60 }}>
           <div style={{ position: "absolute", left: 23, top: 0, bottom: 0, width: 2, background: `linear-gradient(to bottom, ${theme.gold}, ${theme.border})` }} />
           {TIMELINE.map((item, i) => (
             <Reveal key={i} delay={i * 0.15}>
               <div style={{ marginBottom: 52, position: "relative" }}>
-                <div style={{
+                <div className="timeline-dot-pos" style={{
                   position: "absolute", left: -49, top: 6, width: 24, height: 24, borderRadius: "50%",
                   background: item.current ? theme.gold : theme.bg,
                   border: `3px solid ${theme.gold}`, zIndex: 2,
@@ -561,11 +561,11 @@ function Experience() {
 // ─── Skills ─────────────────────────────────────────────────
 function Skills() {
   return (
-    <section id="skills" style={{ padding: "120px 40px", background: theme.bgAlt }}>
+    <section id="skills" className="section-pad" style={{ padding: "120px 40px", background: theme.bgAlt }}>
       <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 1, background: `linear-gradient(90deg, transparent, ${theme.border}, transparent)` }} />
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <Reveal><SectionHeader label="Expertise" title="What I bring to the table" /></Reveal>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, marginTop: 64 }}>
+        <div className="skills-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, marginTop: 64 }}>
           {SKILLS.map((skill, i) => (
             <Reveal key={i} delay={i * 0.08}>
               <HoverCard>
@@ -590,11 +590,11 @@ function Testimonials() {
   }, []);
 
   return (
-    <section id="testimonials" style={{ padding: "120px 40px", background: `linear-gradient(135deg, ${theme.bg} 0%, #0f1520 50%, ${theme.bg} 100%)`, position: "relative", overflow: "hidden" }}>
+    <section id="testimonials" className="section-pad" style={{ padding: "120px 40px", background: `linear-gradient(135deg, ${theme.bg} 0%, #0f1520 50%, ${theme.bg} 100%)`, position: "relative", overflow: "hidden" }}>
       <div style={{ position: "absolute", inset: 0, background: `radial-gradient(ellipse 600px 400px at 50% 50%, ${theme.goldDim}, transparent)` }} />
       <div style={{ maxWidth: 1100, margin: "0 auto", position: "relative", zIndex: 2 }}>
         <Reveal><SectionHeader label="Testimonials" title="What colleagues say" subtitle="Words from people I've worked alongside." light /></Reveal>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, marginTop: 64 }}>
+        <div className="testimonial-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, marginTop: 64 }}>
           {TESTIMONIALS.map((t, i) => (
             <Reveal key={i} delay={i * 0.15}>
               <div style={{
@@ -621,10 +621,10 @@ function Testimonials() {
 // ─── Insights ───────────────────────────────────────────────
 function Insights() {
   return (
-    <section id="insights" style={{ padding: "120px 40px", background: theme.bg }}>
+    <section id="insights" className="section-pad" style={{ padding: "120px 40px", background: theme.bg }}>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <Reveal><SectionHeader label="Insights" title="Thought leadership" subtitle="Perspectives on sales, hiring, and building pipeline." /></Reveal>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 28, marginTop: 64 }}>
+        <div className="blog-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 28, marginTop: 64 }}>
           {INSIGHTS.map((post, i) => (
             <Reveal key={i} delay={i * 0.12}>
               <HoverCard style={{ padding: 0, overflow: "hidden" }}>
@@ -671,10 +671,10 @@ function Contact() {
   });
 
   return (
-    <section id="contact" style={{ padding: "120px 40px", background: theme.bgAlt }}>
+    <section id="contact" className="section-pad" style={{ padding: "120px 40px", background: theme.bgAlt }}>
       <div style={{ maxWidth: 920, margin: "0 auto" }}>
         <Reveal><SectionHeader label="Contact" title="Let's connect" subtitle="Open to conversations about sales leadership, startup roles, and pipeline strategy." /></Reveal>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, marginTop: 64, alignItems: "start" }}>
+        <div className="contact-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, marginTop: 64, alignItems: "start" }}>
           <Reveal delay={0.1}>
             <div>
               <h3 style={{ fontFamily: "'Playfair Display',serif", fontSize: "1.8rem", color: theme.text, marginBottom: 20 }}>Get in touch</h3>
@@ -758,6 +758,30 @@ export default function App() {
         @media (max-width: 900px) {
           .nav-desktop { display: none !important; }
           .nav-hamburger { display: flex !important; }
+        }
+        @media (max-width: 768px) {
+          .hero-grid { grid-template-columns: 1fr !important; text-align: center !important; gap: 40px !important; padding: 120px 20px 80px !important; }
+          .hero-photo-wrap { max-width: 260px !important; margin: 0 auto !important; }
+          .hero-stats-row { justify-content: center !important; gap: 28px !important; }
+          .hero-ctas-row { justify-content: center !important; }
+          .hero-desc { margin-left: auto !important; margin-right: auto !important; }
+          .hero-label-row { justify-content: center !important; }
+          .about-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+          .about-cards { grid-template-columns: 1fr 1fr !important; }
+          .skills-grid { grid-template-columns: 1fr !important; }
+          .testimonial-grid { grid-template-columns: 1fr !important; }
+          .blog-grid { grid-template-columns: 1fr !important; }
+          .contact-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+          .section-pad { padding: 72px 20px !important; }
+          .timeline-wrap { padding-left: 48px !important; }
+          .timeline-dot-pos { left: -37px !important; }
+        }
+        @media (max-width: 480px) {
+          .hero-grid { padding: 110px 16px 60px !important; }
+          .about-cards { grid-template-columns: 1fr !important; }
+          .hero-stats-row { flex-direction: column !important; gap: 16px !important; }
+          .section-pad { padding: 56px 16px !important; }
+          .nav-inner-pad { padding: 12px 16px !important; }
         }
       `}</style>
       <Nav />

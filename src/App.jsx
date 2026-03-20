@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 
+const HEADSHOT_URL = "headshot.png";
 
 // ─── Theme & Config ─────────────────────────────────────────
 const theme = {
@@ -377,8 +378,7 @@ function Hero() {
           }}>
             {[
               { num: 4, suffix: "+", label: "Years at Rippling" },
-              { num: 4, suffix: "x", label: "Promotions" },
-              { num: 500, suffix: "+", label: "Network" },
+              { num: 4, suffix: "x", label: "Promotions" }
             ].map((s, i) => (
               <div key={i}>
                 <div style={{ fontFamily: "'Playfair Display',serif", fontSize: "2.2rem", color: theme.gold, lineHeight: 1 }}>

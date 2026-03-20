@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 
-const HEADSHOT_URL = "headshot.png";
 
 // ─── Theme & Config ─────────────────────────────────────────
 const theme = {

@@ -284,8 +284,12 @@ function Nav() {
     }}>
       <div style={{ maxWidth: 1280, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", padding: scrolled ? "14px 40px" : "24px 40px", transition: "padding 0.5s" }}>
         <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
-          style={{ fontFamily: "'Playfair Display',serif", fontSize: "1.5rem", color: theme.text, textDecoration: "none", letterSpacing: "-0.03em" }}>
-          Pramukh<span style={{ color: theme.gold }}>.</span>
+          style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
+          <span style={{ fontFamily: "'Helvetica Neue',Arial,sans-serif", fontSize: "1.6rem", fontWeight: 900, color: theme.gold, letterSpacing: "-0.05em", lineHeight: 1 }}>PG</span>
+          <span style={{ display: "flex", flexDirection: "column", lineHeight: 1.1 }}>
+            <span style={{ fontFamily: "'Helvetica Neue',Arial,sans-serif", fontSize: "0.72rem", fontWeight: 800, color: "#fff", letterSpacing: "0.15em" }}>PRAMUKH</span>
+            <span style={{ fontFamily: "'Helvetica Neue',Arial,sans-serif", fontSize: "0.52rem", fontWeight: 300, color: theme.textMuted, letterSpacing: "0.2em" }}>GIRISH</span>
+          </span>
         </a>
         <div style={{ display: "flex", gap: 32, alignItems: "center" }} className="nav-desktop">
           {NAV_ITEMS.map((item) => (
@@ -378,7 +382,8 @@ function Hero() {
           }}>
             {[
               { num: 4, suffix: "+", label: "Years at Rippling" },
-              { num: 4, suffix: "x", label: "Promotions" }
+              { num: 4, suffix: "x", label: "Promotions" },
+              { num: 5000, suffix: "+", label: "Network" },
             ].map((s, i) => (
               <div key={i}>
                 <div style={{ fontFamily: "'Playfair Display',serif", fontSize: "2.2rem", color: theme.gold, lineHeight: 1 }}>
@@ -724,8 +729,13 @@ function Contact() {
 function Footer() {
   return (
     <footer style={{ background: theme.bg, padding: "44px 40px", textAlign: "center", borderTop: `1px solid ${theme.border}` }}>
+      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 8, marginBottom: 12 }}>
+        <span style={{ fontFamily: "'Helvetica Neue',Arial,sans-serif", fontSize: "1.2rem", fontWeight: 900, color: theme.gold, letterSpacing: "-0.05em" }}>PG</span>
+        <span style={{ width: 1, height: 16, background: theme.textDim }} />
+        <span style={{ fontFamily: "'Helvetica Neue',Arial,sans-serif", fontSize: "0.7rem", fontWeight: 800, color: theme.text, letterSpacing: "0.12em" }}>PRAMUKH GIRISH</span>
+      </div>
       <p style={{ fontSize: "0.76rem", color: theme.textDim, letterSpacing: "0.05em" }}>
-        © 2026 Pramukh G. All rights reserved. &nbsp;|&nbsp;{" "}
+        © 2026 Pramukh Girish. All rights reserved. &nbsp;|&nbsp;{" "}
         <a href="https://www.linkedin.com/in/pramukh-g-8128b449/" target="_blank" style={{ color: theme.gold, textDecoration: "none" }}>LinkedIn</a>
       </p>
     </footer>

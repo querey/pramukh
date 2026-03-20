@@ -377,7 +377,7 @@ function Hero() {
             transition: "all 1s cubic-bezier(0.16,1,0.3,1) 0.55s"
           }}>
             {[
-              { num: 3, suffix: "+", label: "Years at Rippling" },
+              { num: 4, suffix: "+", label: "Years at Rippling" },
               { num: 4, suffix: "x", label: "Promotions" },
               { num: 500, suffix: "+", label: "Network" },
             ].map((s, i) => (

@@ -378,7 +378,7 @@ function Hero() {
             {[
               { num: 4, suffix: "+", label: "Years at Rippling" },
               { num: 4, suffix: "x", label: "Promotions" },
-              { num: 5000, suffix: "+", label: "Network" },
+              { num: 500, suffix: "+", label: "Network" },
             ].map((s, i) => (
               <div key={i}>
                 <div style={{ fontFamily: "'Playfair Display',serif", fontSize: "2.2rem", color: theme.gold, lineHeight: 1 }}>
